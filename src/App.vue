@@ -13,8 +13,13 @@ interface Branch {
   theta: number
 }
 
+const resize = () => {
+  el.width = window.innerWidth * 2
+  el.height = window.innerHeight * 2
+}
+
 function init() {
-  ctx.strokeStyle = '#fff5'
+  ctx.strokeStyle = '#ccc'
 
   step({
     start: { x: 0, y: 0 },
@@ -88,10 +93,11 @@ function drawBranch(b: Branch) {
 }
 
 onMounted(() => {
+  resize()
   init()
 })
 </script>
 
 <template>
-  <canvas ref="el" width="2000" height="2000" scale-50 origin-top-left />
+  <canvas ref="el" scale-50 origin-top-left />
 </template>>
